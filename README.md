@@ -3,7 +3,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-Deploy: `rsync -Oavz --no-perms $(pwd)/build/ <user>@webserver.coredatasystems.co.uk:/var/www/science/public_html/question_author`
+Deploy:
+
+```bash
+yarn build
+rsync -Oavz --exclude 'sqlite.db' --no-perms $(pwd)/build/ <user>@webserver.coredatasystems.co.uk:/var/www/science/public_html/question_author
+```
 
 ## Table of Contents
 

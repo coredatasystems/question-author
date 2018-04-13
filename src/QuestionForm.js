@@ -84,7 +84,7 @@ class QuestionForm extends React.Component {
               }
               <button onClick={ this.handleAddAnswer } className="btn btn-success btn-add-answer">Add Answer</button>
               <button onClick={ this.handleRemoveAnswer } className="btn btn-danger btn-add-answer">Remove Answer</button>
-              <FileInput name="image" label="Upload image" />
+              {/*<FileInput name="image" label="Upload image" />*/}
               <FormGroup label="Add tags" name="tags" />
               <button type="submit" className="btn btn-primary">Submit</button>
             </form>
