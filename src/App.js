@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 
 import QuestionForm from './QuestionForm';
+import QuestionList from './QuestionList';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -21,6 +22,7 @@ class App extends Component {
             </div>
           }
           <QuestionForm />
+          <QuestionList />
         </div>
       </div>
     );

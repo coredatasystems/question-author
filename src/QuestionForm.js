@@ -54,7 +54,8 @@ class QuestionForm extends React.Component {
     }));
   }
 
-  handleSubmit(e) {
+  /* Add actual input attributes so form will submit correctly. */
+  static handleSubmit(e) {
     e.preventDefault();
 
     Array.from(e.target.getElementsByTagName('input')).forEach(input => {
@@ -74,7 +75,7 @@ class QuestionForm extends React.Component {
         </div>
         <div className="col-8">
           <div className="container">
-            <form method="POST" action="handleSubmit.php" onSubmit={this.handleSubmit}>
+            <form method="POST" action="handleSubmit.php" onSubmit={QuestionForm.handleSubmit}>
               <FormGroup onFocus={ this.onInputFocus } label="Question" name="question" />
               <FormGroup onFocus={ this.onInputFocus } label="Correct Answer" name="correct_answer" />
               {

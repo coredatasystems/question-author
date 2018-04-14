@@ -36,3 +36,27 @@
 .btn-add-answer {
   margin-bottom: 30px;
 }
+
+.question-list-container {
+  margin-top: 30px;
+}
+
+.question-list {
+  list-style: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0;
+}
+
+.question-item {
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+
+.question-item:last-child {
+  border-bottom: none;
+}
+
+.question-item-toggle {
+  cursor: pointer;
+}
