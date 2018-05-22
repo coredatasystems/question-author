@@ -17,7 +17,7 @@ class App extends Component {
         </header>
         <div className="container">
           { window.location.hash === '#submitted' &&
-            <div class="alert alert-success" role="alert">
+            <div className="alert alert-success" role="alert">
               Question saved.
             </div>
           }

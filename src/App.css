@@ -60,3 +60,41 @@
 .question-item-toggle {
   cursor: pointer;
 }
+
+.badge.filter-badge {
+  font-size: 1em;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 0;
+}
+
+.question-list-container {
+  position: relative;
+}
+
+.filter-container {
+  background-color: #efefef;
+  border: 1px solid #c8c8c8;
+  border-radius: 1px;
+  padding: 5px;
+}
+
+.tag-filter-checkbox {
+  margin-right: 1.5em;
+  display: inline-block;
+  background-color: #fffc85;
+  border-radius: 3px;
+  padding: 0 8px;
+  margin-bottom: 4px;
+}
+
+.tag-filter-checkbox label {
+  margin-left: 0.5em;
+  position: relative;
+  top: 2px;
+}
+
+.filter-all-checkboxes {
+  text-align: right;
+}
