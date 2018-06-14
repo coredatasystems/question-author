@@ -72,18 +72,6 @@ class QuestionForm extends React.Component {
     }));
   }
 
-  ///* Add actual input attributes so form will submit correctly. */
-  //static handleSubmit(e) {
-  //  e.preventDefault();
-  //
-  //  Array.from(e.target.getElementsByTagName('input')).forEach(input => {
-  //    console.log(input);
-  //    input.setAttribute('value', input.value);
-  //  });
-  //
-  //  //e.target.submit();
-  //}
-
   render() {
     return (
       <div className="row question-form">
