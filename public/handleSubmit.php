@@ -26,10 +26,20 @@ if ($pdo == null)
 $statement = $pdo->prepare("INSERT INTO questions(question, correct_answer, incorrect_answers, tags)
     VALUES(:question, :correct_answer, :incorrect_answers, :tags)");
 
+$upload_directory = __DIR__ . '/uploads';
+
+for ($i = 0; $i < count($_FILES['file']['tmp_name']); $i++) {
+    $uploaded_file = $upload_directory . uniqid();
+    if (!move_uploaded_file($_FILES['file']['tmp_name'][$i], $uploaded_file)) {
+        die('Could not upload ' . $uploaded_file);
+    }
+}
+
 $statement->execute(array(
     "question" => $_POST['question'],
     "correct_answer" => $_POST['correct_answer'],
     "incorrect_answers" => implode(',', $_POST['incorrect_answers']),
+    "image" => implode(',', $_FILES['file']['name']),
     "tags" => $_POST['tags'],
 ));
 

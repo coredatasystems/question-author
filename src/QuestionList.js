@@ -5,6 +5,7 @@ import TagFilter from './TagFilter';
 
 const normalizeQuestionsByTag = (questions) => (
   questions.reduce((tags, question) => {                // Reduce questions into an array of tags.
+    if (!question.tags) question.tags = 'untagged';
     question.tags.split(',')                            // 1. Split comma separated tags.
       .map(tag => tag.trim())                           // 2. Trim whitespace from each tag.
       .forEach(tag => {                                 // 3. Check each tag,
