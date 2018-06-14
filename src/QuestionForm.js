@@ -19,10 +19,13 @@ class QuestionForm extends React.Component {
     super(props);
     this.state = {
       incorrectAnswers: 1,
+      images: 1,
       activeInput: null,
     };
     this.onInputFocus = this.onInputFocus.bind(this);
+    this.handleAddImage = this.handleAddImage.bind(this);
     this.handleAddAnswer = this.handleAddAnswer.bind(this);
+    this.handleRemoveImage = this.handleRemoveImage.bind(this);
     this.handleRemoveAnswer = this.handleRemoveAnswer.bind(this);
     this.handleCharacterPress = this.handleCharacterPress.bind(this);
     this.unicodeCharacters = '⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁺ ⁻ ⁼ ⁽ ⁾ ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ₊ ₋ ₌ ₍ ₎'.split(' ');
@@ -36,7 +39,8 @@ class QuestionForm extends React.Component {
 
   handleCharacterPress(character) {
     if (this.state.activeInput) {
-      this.state.activeInput.value = (this.state.activeInput.value || '') + character;
+      const { activeInput } = this.state;
+      activeInput.value = (activeInput.value || '') + character;
     }
   }
 
@@ -51,6 +55,20 @@ class QuestionForm extends React.Component {
     e.preventDefault();
     this.setState(state => ({
       incorrectAnswers: state.incorrectAnswers - 1,
+    }));
+  }
+
+  handleAddImage(e) {
+    e.preventDefault();
+    this.setState(state => ({
+      images: state.images + 1,
+    }));
+  }
+
+  handleRemoveImage(e) {
+    e.preventDefault();
+    this.setState(state => ({
+      images: state.images - 1,
     }));
   }
 
@@ -85,7 +103,13 @@ class QuestionForm extends React.Component {
               }
               <button onClick={ this.handleAddAnswer } className="btn btn-success btn-add-answer">Add Answer</button>
               <button onClick={ this.handleRemoveAnswer } className="btn btn-danger btn-add-answer">Remove Answer</button>
-              {/*<FileInput name="image" label="Upload image" />*/}
+              {
+                Array.from({ length: this.state.images }).map((n, index) => (
+                  <FileInput key={ index } label="Upload Image" name="images[]" />
+                ))
+              }
+              <button onClick={ this.handleAddImage } className="btn btn-success btn-add-answer">Add Image</button>
+              <button onClick={ this.handleRemoveImage } className="btn btn-danger btn-add-answer">Remove Image</button>
               <FormGroup label="Add tags" name="tags" />
               <button type="submit" className="btn btn-primary">Submit</button>
             </form>
