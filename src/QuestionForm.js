@@ -82,7 +82,7 @@ class QuestionForm extends React.Component {
         </div>
         <div className="col-8">
           <div className="container">
-            <form method="POST" enctype="multipart/form-data" action="handleSubmit.php" onSubmit={QuestionForm.handleSubmit}>
+            <form method="POST" encType="multipart/form-data" action="handleSubmit.php">
               <FormGroup onFocus={ this.onInputFocus } label="Question" name="question" />
               <FormGroup onFocus={ this.onInputFocus } label="Correct Answer" name="correct_answer" />
               {
