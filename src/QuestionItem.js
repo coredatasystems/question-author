@@ -31,7 +31,7 @@ class QuestionItem extends React.Component {
             {image && image.length > 0 &&
               <li>
                 <strong>Images:</strong>
-                {image.split(',').map(src => <img src={`/uploads/${ src }`}/>)}
+                {image.split(',').map(src => <img src={`uploads/${ src }`}/>)}
               </li>
             }
             <form method="POST" encType="multipart/form-data" action="addImage.php">
