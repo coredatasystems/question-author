@@ -28,7 +28,7 @@ class QuestionItem extends React.Component {
             <li><strong>Correct answer:</strong> { correct_answer }</li>
             <li><strong>Incorrect answers:</strong> { incorrect_answers }</li>
             <li><strong>Tags:</strong> { tags }</li>
-            {image.length > 0 &&
+            {image && image.length > 0 &&
               <li>
                 <strong>Images:</strong>
                 {image.split(',').map(src => <img src={`/uploads/${ src }`}/>)}
