@@ -7,7 +7,7 @@ Deploy:
 
 ```bash
 yarn build
-rsync -Oavz --exclude 'sqlite.db' --no-perms $(pwd)/build/ <user>@webserver.coredatasystems.co.uk:/var/www/science/public_html/question_author
+rsync -Oavz --exclude 'sqlite.db' --no-perms $(pwd)/build/ <user>@webserver:/var/www/site/public_html/question_author
 ```
 
 ## Table of Contents
